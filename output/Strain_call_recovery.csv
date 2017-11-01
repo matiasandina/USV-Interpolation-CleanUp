@@ -1,0 +1,40 @@
+"label","strain","n_filtered","n_raw","percent_filtered"
+"complex","SD",131,164,79.88
+"complex","WK",133,178,74.72
+"downward ramp","SD",27,43,62.79
+"downward ramp","WK",25,34,73.53
+"flat","SD",4032,5845,68.98
+"flat","WK",667,930,71.72
+"flat-mz","SD",482,527,91.46
+"flat-mz","WK",41,45,91.11
+"flat-z","SD",676,852,79.34
+"flat-z","WK",137,170,80.59
+"inverted-u","SD",61,82,74.39
+"inverted-u","WK",53,71,74.65
+"multi-step","SD",22,27,81.48
+"multi-step","WK",3,5,60
+"multi-step-s","SD",6,7,85.71
+"short","SD",627,942,66.56
+"short","WK",379,593,63.91
+"short-c","SD",64,93,68.82
+"short-c","WK",96,169,56.8
+"short-dr","SD",10,22,45.45
+"short-dr","WK",12,22,54.55
+"short-sd","SD",1,5,20
+"short-sd","WK",2,2,100
+"short-su","SD",1,1,100
+"short-su","WK",5,9,55.56
+"short-ur","SD",47,82,57.32
+"short-ur","WK",31,82,37.8
+"step down","SD",95,146,65.07
+"step down","WK",18,33,54.55
+"step up","SD",44,66,66.67
+"step up","WK",37,68,54.41
+"trill","SD",73,114,64.04
+"trill","WK",69,407,16.95
+"trill-c","SD",32,38,84.21
+"trill-c","WK",62,132,46.97
+"trill-f","SD",27,27,100
+"trill-f","WK",16,16,100
+"upward ramp","SD",68,87,78.16
+"upward ramp","WK",20,23,86.96
