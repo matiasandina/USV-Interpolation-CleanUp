@@ -5,7 +5,7 @@ Prune_Me <- function(non.interpolated,
   
   
   
-  # non interpolated data is needed to calculate mean + 3sd boundaries
+  ## non interpolated data is needed to calculate mean + 3sd boundaries
   # also needed to plot in show.plot=T
   
   interp <-  interpolated 

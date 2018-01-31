@@ -2,7 +2,7 @@
 
 filtered_50 <- Filter_Me(raw_50, f1:f50, 1, please.filter = T)
 
-################ SUMMARY OF COVERAGE ################
+################ SUMMARY OF COVERAGE #################
 A <- filtered_50 %>% group_by(label, strain) %>% tally() %>% rename(n_filtered=n)
 
 B <- raw_50 %>% group_by(label, strain) %>% tally() %>% rename(n_raw=n)

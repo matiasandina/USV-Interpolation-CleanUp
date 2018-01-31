@@ -1,7 +1,7 @@
 Fit_Row <- function(x, y, inspect=TRUE, mymethod=NULL){
   
   
-  # if you run the function just to inspect
+  ## if you run the function just to inspect
   # the idea is that you are looping over rows from 
   # another function
   
