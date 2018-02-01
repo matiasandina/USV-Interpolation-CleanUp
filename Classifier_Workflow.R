@@ -1,5 +1,9 @@
 # What we run
 
+source('src/Filter_Me.R')
+source('src/my_loader.R')
+my_loader(c("dplyr","ggplot2", "tidyr"))
+
 filtered_50 <- Filter_Me(raw_50, f1:f50, 1, please.filter = T)
 
 ################ SUMMARY OF COVERAGE #################

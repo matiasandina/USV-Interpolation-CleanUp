@@ -13,7 +13,11 @@ Filter_Me <- function(dataframe,
   # Duration cannot be more than 300 ms 
   # We want to keep x between 0.002 & 0.4
   
-  dataframe <- filter(dataframe, duration>=0.002 & duration<0.4)
+  #dataframe <- dplyr::filter(dataframe, duration>=0.002 & duration<0.4)
+  #got rid of duration < 0.4 because some labels containing many overlapping
+  #calls will be longer than this and don't want to lose those
+  
+  dataframe <- dplyr::filter(dataframe, duration>=0.002)
   
   # This is only useful if you need to subset numeric columns 
   # aka duration
@@ -36,7 +40,8 @@ Filter_Me <- function(dataframe,
   # 1) Anything below 15000 should go to NA
   # 2) Anything above 120000 should go to NA
   
-  dataframe <- dataframe %>% mutate_at(.cols = columns,
+  columns <- enquo(columns)
+  dataframe <- dataframe %>% mutate_at(.vars = vars(!!columns),
                                       .funs=function(q) fix_human(q,15000,120000))
   
 
@@ -59,7 +64,7 @@ for(myend in 1:length(end.positions)){
   signal <- dataframe %>%
     mutate(ID=1:nrow(dataframe)) %>%
     group_by(ID) %>%
-    select_(columns)
+    select(!!columns)
   
   # We add one to account for ID column in position 1 of data.frame signal
   start.chunk <- c(1:myend) + 1
@@ -128,6 +133,11 @@ for(myend in 1:length(end.positions)){
   # Make summary 
   
   print("Here's a summary of the coverage")
+  
+  #na.max <- enquo(na.max)
+  #End.Trim <- enquo(End.Trim)
+  #accepted <- enquo(accepted)
+  #n <- enquo(n)
   
   summ.cov <- HUGE %>% 
     group_by(na.max, End.Trim) %>%
