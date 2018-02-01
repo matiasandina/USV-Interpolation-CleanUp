@@ -1,5 +1,9 @@
 # What we run
 
+source('src/Filter_Me.R')
+source('src/my_loader.R')
+my_loader(c("dplyr","ggplot2"))
+
 filtered_50 <- Filter_Me(raw_50, f1:f50, 1, please.filter = T)
 
 ################ SUMMARY OF COVERAGE #################
@@ -28,9 +32,10 @@ write.csv(Strain_sum, "Strain_total_recovery.csv", row.names=F)
 # The idea is to give it the filtered_50 with the column vector and it will
 # Handle the subset and (apply,1, FUN=...) call for you instead of having to 
 # hard code everything
+source('src/Interpolate_Me.R')
+source('src/Fit_Row.R')
 
-
-Interpolated_data <- Interpolate_Me(filtered_50, c(3:52), mymethod = 'splines')
+Interpolated_data <- Interpolate_Me(filtered_50, c(6:55), mymethod = 'splines')
 
 ######################
 
