@@ -120,7 +120,7 @@ poly.four <- function(x,y) {
 
 ##### Splines ######
 
-zoo::na.spline(y)
+#zoo::na.spline(y)
 
 
 ##### Piece-Wise ######
@@ -211,42 +211,42 @@ piece <- function(x,y){
 
 ## Plot Ideas ########
   
-plot(x,y)
-points(x=x,y=predict(lala, newdata=data.frame(y, x)), col="red", pch=19)
+#plot(x,y)
+#points(x=x,y=predict(lala, newdata=data.frame(y, x)), col="red", pch=19)
   
   
-if ( plot == TRUE ) {
+#if ( plot == TRUE ) {
   
-  plot.frame <- data.frame(
-    y=rep(y,2)/7,
-    x=rep(1:length(y),2),
-    inter.values=c(interpol.linear.final, interpol.spline.final)/7,
-    method=c(rep("Linear", length(y)), rep("Spline", length(y)))
-  )
+#  plot.frame <- data.frame(
+#    y=rep(y,2)/7,
+#    x=rep(1:length(y),2),
+#    inter.values=c(interpol.linear.final, interpol.spline.final)/7,
+#    method=c(rep("Linear", length(y)), rep("Spline", length(y)))
+#  )
   
-  p <- ggplot(data=plot.frame, aes(x=x)) +
-    geom_point(aes(y=y, x=x), size=4) +
-    geom_line(aes(y=inter.values, color=method), size=1) +
-    ylab("y") +
-    xlab("x") +
-    theme(axis.title.y =element_text(vjust=0.4, size=20, angle=90)) +
-    theme(axis.title.x =element_text(vjust=0, size=20, angle=0)) +
-    theme(axis.text.x =element_text(size=15, colour = "black")) +
-    theme(axis.text.y =element_text(size=17, colour = "black")) +
-    theme(panel.background =  element_rect(fill = "grey85", colour = NA),
-          panel.grid.major =  element_line(colour = "white"),
-          panel.grid.minor =  element_line(colour = "grey90", size = 0.25))+
-    scale_color_manual(values=c("#377EB8", "#E41A1C"), 
-                       name="Interpolation method",
-                       breaks=c("Linear", "Spline"),
-                       labels=c("Linear", "Spline")) +
-    theme(legend.position="none") +
-    theme(strip.text.x = element_text(size=16)) +
-    facet_wrap(~ method)
+#  p <- ggplot(data=plot.frame, aes(x=x)) +
+#    geom_point(aes(y=y, x=x), size=4) +
+#    geom_line(aes(y=inter.values, color=method), size=1) +
+#    ylab("y") +
+#    xlab("x") +
+#    theme(axis.title.y =element_text(vjust=0.4, size=20, angle=90)) +
+#    theme(axis.title.x =element_text(vjust=0, size=20, angle=0)) +
+#    theme(axis.text.x =element_text(size=15, colour = "black")) +
+#    theme(axis.text.y =element_text(size=17, colour = "black")) +
+#    theme(panel.background =  element_rect(fill = "grey85", colour = NA),
+#          panel.grid.major =  element_line(colour = "white"),
+#          panel.grid.minor =  element_line(colour = "grey90", size = 0.25))+
+#    scale_color_manual(values=c("#377EB8", "#E41A1C"), 
+#                       name="Interpolation method",
+#                       breaks=c("Linear", "Spline"),
+#                       labels=c("Linear", "Spline")) +
+#    theme(legend.position="none") +
+#    theme(strip.text.x = element_text(size=16)) +
+#    facet_wrap(~ method)
   
-  suppressWarnings(print(p))
+#  suppressWarnings(print(p))
   
-}
+#}
 
 # More info about splines here https://stats.stackexchange.com/questions/59418/interpolation-of-influenza-data-that-conserves-weekly-mean/63004
 
