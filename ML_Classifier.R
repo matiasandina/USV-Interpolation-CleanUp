@@ -161,6 +161,8 @@ tunGridSVM <-  data.frame(C=c(0.25, 0.5, 1, 2, 4, 16, 32))
 
 
 ## pcaNNET ?
+source('src/Summarise_Me.R')
+source('src/Auto_Corr.R')
 
 to.pca <- Summarise_Me(QQ, 1)
 to.pca$duration <- log(filtered_50$duration)
