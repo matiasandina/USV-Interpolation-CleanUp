@@ -2,7 +2,7 @@
 
 source('src/Filter_Me.R')
 source('src/my_loader.R')
-my_loader(c("dplyr","ggplot2"))
+my_loader(c("dplyr","ggplot2", "tidyr"))
 
 filtered_50 <- Filter_Me(raw_50, f1:f50, 1, please.filter = T)
 
@@ -40,11 +40,13 @@ Interpolated_data <- Interpolate_Me(filtered_50, c(6:55), mymethod = 'splines')
 ######################
 
 # Once the data has been interpolated, we prune
-
+source('src/Prune_Me.R')
+source('src/piece.R')
 
 qq<-Prune_Me(filtered_50, Interpolated_data, 1,show.plot = F)
 
 # This function outside here is temporary, it will be called by Prune_Me
+source('src/copy_NA.R')
 
 QQ <- t(apply(qq, 1, function(y) copy_NA(y)))
 

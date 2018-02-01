@@ -78,6 +78,7 @@ Prune_Me <- function(non.interpolated,
     y <- out[i,]
     
     # Get predicted values for piece-wise regression
+    
     fit <- piece(x,y)
     
     out[i,is.na(y)] <- fit[is.na(y)]

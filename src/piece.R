@@ -1,5 +1,7 @@
 
 ##### Piece-Wise ######
+library(segmented)
+
 
 piece <- function(x,y){
   
